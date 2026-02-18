@@ -1,0 +1,39 @@
+package com.project.controller;
+
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.project.dto.AuthRequestDTO;
+import com.project.dto.AuthResponseDTO;
+import com.project.service.AuthService;
+
+import jakarta.validation.Valid;
+import lombok.RequiredArgsConstructor;
+
+@RestController
+@RequestMapping("/api/auth")
+@CrossOrigin(origins = "http://localhost:5181")
+@RequiredArgsConstructor
+public class AuthController {
+
+    private final AuthService authService;
+
+    @PostMapping("/register")
+    public ResponseEntity<String> register(
+            @Valid @RequestBody AuthRequestDTO dto) {
+
+        return ResponseEntity.ok(authService.register(dto));
+    }
+
+    @PostMapping("/login")
+    public ResponseEntity<AuthResponseDTO> login(
+            @Valid @RequestBody AuthRequestDTO dto) {
+
+        return ResponseEntity.ok(authService.login(dto));
+    }
+}
+
