@@ -14,7 +14,7 @@ import lombok.RequiredArgsConstructor;
 @RestController
 @RequestMapping("/api/certificates")
 @RequiredArgsConstructor
-@CrossOrigin(origins = "http://localhost:5181")
+@CrossOrigin(origins = "http://localhost:5173")
 public class CertificateController {
 
     private final CertificateService certificateService;

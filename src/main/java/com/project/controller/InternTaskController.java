@@ -17,7 +17,7 @@ import lombok.RequiredArgsConstructor;
 @RestController
 @RequestMapping("/api/tasks")
 @RequiredArgsConstructor
-@CrossOrigin(origins = "http://localhost:5181")
+@CrossOrigin(origins = "http://localhost:5173")
 public class InternTaskController {
 
     private final TaskService taskService;

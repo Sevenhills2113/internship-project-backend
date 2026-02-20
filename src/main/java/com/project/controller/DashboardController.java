@@ -22,7 +22,7 @@ import lombok.RequiredArgsConstructor;
 
 @RestController
 @RequestMapping("/api/dashboard")
-@CrossOrigin(origins = "http://localhost:5181")
+@CrossOrigin(origins = "http://localhost:5173")
 @RequiredArgsConstructor
 public class DashboardController {
 
